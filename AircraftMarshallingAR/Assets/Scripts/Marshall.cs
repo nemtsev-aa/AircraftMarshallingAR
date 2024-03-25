@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Animator), typeof(SoundSignalManager))]
+[RequireComponent(typeof(SoundSignalManager))]
 public class Marshall : MonoBehaviour {
     public const string SignalIndex = "SignalIndex_int";
 
@@ -8,7 +8,7 @@ public class Marshall : MonoBehaviour {
     private Animator _animator;
 
     private void Awake() {
-        _animator ??= GetComponent<Animator>();
+        _animator ??= GetComponentInChildren<Animator>();
         _soundManager ??= GetComponent<SoundSignalManager>();
     }
 
